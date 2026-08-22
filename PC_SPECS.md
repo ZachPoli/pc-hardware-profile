@@ -44,10 +44,13 @@ External SSDs are available, but model/capacity details have not yet been record
   - Intel Bluetooth driver clean reinstall
   - PC full power reset
   - Wi-Fi-side disable test
-- Result: problem persists, making the desktop wireless module the leading suspect.
+- Result: problem persists, making the desktop wireless module / antenna path the leading suspect.
+- The existing motherboard Wi-Fi module is housed in an awkward rear-I/O assembly, so replacing the bare M.2 module would likely require more disassembly than desired.
 
 ### Planned
-- Replace AC 3168 with Intel AX210 M.2 2230 Key-E Wi-Fi/Bluetooth module.
+- Bypass the existing AC 3168 by installing an Intel AX210-based PCIe Wi-Fi 6E / Bluetooth 5.3 adapter.
+- Preferred current option: Cudy WE3000S 2.0 (Intel AX210), using an open PCIe slot plus a motherboard USB 9-pin header for Bluetooth.
+- Disable the old AC 3168 Wi-Fi/Bluetooth devices in Windows after the new adapter is verified.
 
 ## RAM details reported by Windows
 
@@ -61,7 +64,7 @@ Total installed RAM: **32 GB**
 
 ## Upgrade priorities
 
-1. Replace failing/unstable AC 3168 wireless module with Intel AX210.
+1. Install an Intel AX210-based PCIe Wi-Fi/Bluetooth adapter to bypass the unstable AC 3168 path.
 2. Clean dust from case, radiator, fans, GPU heatsink, and filters.
 3. Run thermal/benchmark baseline after cleaning.
 4. Evaluate CPU thermal paste only if temperatures warrant it.
