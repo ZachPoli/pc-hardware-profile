@@ -19,20 +19,22 @@
 - [ ] Decide whether CPU thermal paste replacement is justified.
 - [ ] Do not disassemble/repaste GPU unless thermal data supports it.
 
-### Wireless upgrade
+### Wireless upgrade — PCIe AX210 bypass
+- [ ] Use an Intel AX210-based PCIe adapter rather than removing the motherboard to access the existing AC 3168 module.
+- [ ] Preferred current option: Cudy WE3000S 2.0 (Intel AX210, Wi-Fi 6E, Bluetooth 5.3).
 - [ ] Shut down Windows, switch PSU off, and unplug the PC.
 - [ ] Press the case power button briefly after unplugging to discharge residual power.
-- [ ] Locate the existing Intel AC 3168 in the motherboard's vertical M.2 Key-E 2230 Wi-Fi socket.
-- [ ] Carefully pop the two tiny antenna leads straight up from the AC 3168 connectors.
-- [ ] Remove the retaining screw/clip and slide the AC 3168 out of the Key-E socket.
-- [ ] Insert the Intel AX210 at the same angle/orientation into that same Key-E socket.
-- [ ] Secure the AX210 with the same retaining screw/clip.
-- [ ] Press the antenna leads straight down onto the AX210 MAIN and AUX terminals until they snap into place; do not force them sideways.
+- [ ] Install the adapter in an available PCIe slot.
+- [ ] Connect the adapter's supplied Bluetooth cable to an available motherboard USB 9-pin header.
+- [ ] Mount/connect the adapter's external antennas.
 - [ ] Reassemble and power on.
-- [ ] Install current Intel AX210 Wi-Fi and Bluetooth drivers.
+- [ ] Install current Wi-Fi/Bluetooth drivers for the new adapter.
 - [ ] Pair Xbox controller and test Bluetooth stability for at least 15 minutes.
-- [ ] Confirm other Bluetooth devices also work normally.
+- [ ] Test at least one additional Bluetooth device if available.
+- [ ] After the new adapter is verified, disable the old Intel AC 3168 Wi-Fi/Bluetooth devices in Windows so the PC uses only the new radio.
 
 ## Notes
 
 The CPU cooler appears to be a sealed DeepCool AIO. Its coolant is not treated as routine user-serviceable fluid; if pump/coolant performance fails, the normal remedy is AIO replacement rather than opening the loop.
+
+The existing AC 3168 is in an awkward rear-I/O / vertical M.2 assembly. The decision is to bypass it with a PCIe AX210 adapter rather than remove the motherboard solely to replace the hidden module.
