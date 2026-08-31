@@ -10,7 +10,7 @@ Thermal/benchmark testing began after the August 2026 cleaning and AX210 wireles
 - BIOS version: AMI 1.24 (2023-05-22)
 - GPU driver version: 32.0.15.9159 (reported earlier by Windows)
 - Windows power mode: Not recorded
-- Monitoring: HWiNFO64 v8.52-6060, sensors-only, roughly 5 minutes of light/idle observation
+- Monitoring: HWiNFO64 v8.52-6060
 - Notes: PC had just been cleaned with an air duster. New Wavlink Intel AX210 PCIe Wi-Fi/Bluetooth adapter installed and working. Old Intel AC 3168 disabled for normal use.
 
 ## Post-cleaning idle / light-background baseline
@@ -42,18 +42,39 @@ Thermal/benchmark testing began after the August 2026 cleaning and AX210 wireles
 - The MSI M371 NVMe secondary temperature sensor is the only notable warm reading. It reached 69 C during this short observation, so it should be watched during storage and gaming tests before deciding whether it needs better airflow or an M.2 heatsink.
 - HWiNFO reported zero CPU thermal throttling and zero WHEA hardware errors.
 
-## CPU load
+## CPU load — Cinebench 2026
 
-Test:
-Duration:
+- Test: Cinebench 2026.1.3 CPU (Multiple Threads)
+- Date: 2026-08-30
+- Score: **3211 pts**
+- Cinebench built-in ranking showed an identical Ryzen 5 7600X reference score of 3211 pts.
+- HWiNFO capture covered approximately 13 minutes including the benchmark and brief post-test cooldown.
 
 | Metric | Result |
 |---|---:|
-| CPU max temperature | |
-| CPU average temperature | |
-| Peak package power | |
-| Peak clock | |
-| Score | |
+| CPU Tctl/Tdie maximum | 82.6 C |
+| CPU Tctl/Tdie average | 78.8 C |
+| CPU Die (average) maximum | 80.6 C |
+| CPU Die (average) average | 75.4 C |
+| Peak CPU package power | 102.2 W |
+| Average CPU package power | ~95.6-96.2 W |
+| Peak CPU PPT | 100.0 W |
+| Average CPU PPT | ~93.5-94.1 W |
+| Peak core clock | 5,440 MHz |
+| Average effective core clock | 4,807.6 MHz |
+| Average total CPU usage | 96.2% |
+| Maximum thermal-limit utilization | 94.8% |
+| Thermal throttling (HTC) | No |
+| Thermal throttling (PROCHOT CPU) | No |
+| Thermal throttling (PROCHOT EXT) | No |
+| Score | 3211 pts |
+
+### CPU load assessment
+
+- Result is excellent and exactly matches Cinebench 2026's displayed reference result for an identical Ryzen 5 7600X.
+- The CPU sustained roughly 4.8 GHz average effective clocks at about 96 W package power without any reported thermal throttling.
+- Peak Tctl/Tdie of 82.6 C is comfortably below the processor's thermal ceiling during this all-core rendering workload.
+- The AIO is handling the 7600X properly. Current data does **not** justify replacing CPU thermal paste or the AIO.
 
 ## GPU load
 
