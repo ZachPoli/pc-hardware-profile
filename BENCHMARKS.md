@@ -76,19 +76,48 @@ Thermal/benchmark testing began after the August 2026 cleaning and AX210 wireles
 - Peak Tctl/Tdie of 82.6 C is comfortably below the processor's thermal ceiling during this all-core rendering workload.
 - The AIO is handling the 7600X properly. Current data does **not** justify replacing CPU thermal paste or the AIO.
 
-## GPU load
+## GPU load — Cinebench 2026
 
-Test:
-Duration:
+- Test: Cinebench 2026.1.3 GPU
+- Date: 2026-08-30
+- GPU: MSI GeForce RTX 4070 Ti Ventus 3X
+- Score: **79,915 pts**
+- Cinebench built-in ranking displayed **79,915 pts** for an identical NVIDIA GeForce RTX 4070 Ti reference entry.
+- HWiNFO capture covered roughly 12.5 minutes including the benchmark and brief post-test cooldown.
 
 | Metric | Result |
 |---|---:|
-| GPU max core temperature | |
-| GPU max hotspot temperature | |
-| Hotspot delta | |
-| Peak board power | |
-| Peak clock | |
-| Score | |
+| GPU core maximum | 54.7 C |
+| GPU core average | ~50.3 C |
+| GPU hotspot maximum | 61.2 C |
+| GPU hotspot average | 57.3 C |
+| Maximum hotspot-to-core delta | ~6.5 C |
+| GPU memory junction maximum | 62.0 C |
+| GPU memory junction average | 58.2 C |
+| GPU thermal limit | 84.0 C |
+| Peak reported GPU power | 155.2 W |
+| Peak GPU rail power | 208.4 W |
+| Peak total GPU power (% TDP) | 58.6% |
+| Peak GPU clock | 2,910 MHz |
+| Average GPU clock | ~2,745 MHz |
+| Peak effective clock | 2,890.5 MHz |
+| Average effective clock | ~2,735 MHz |
+| Peak GPU core load | 95% |
+| Average GPU core load | ~71% |
+| Peak memory usage | 93.5% |
+| Fan 1 maximum | 1,211 RPM / 30% |
+| Fan 2 maximum | 1,222 RPM / 30% |
+| Cinebench score | 79,915 pts |
+
+### GPU load assessment
+
+- Performance is exactly on Cinebench 2026's displayed reference score for an RTX 4070 Ti.
+- Cooling performance is excellent: 54.7 C maximum core temperature, 61.2 C hotspot, and 62 C memory junction are all very comfortable under this workload.
+- The hotspot-to-core spread is extremely small, giving no indication of poor cooler contact or dried thermal interface material.
+- Fan speeds remained modest at roughly 30% maximum while maintaining low temperatures.
+- HWiNFO showed `GPU Performance Limiters = Yes`; this alone is normal on NVIDIA GPUs because at least one boost limiter (power, voltage, utilization, etc.) is commonly active. With the exact-reference score and very low temperatures, there is no evidence of thermal throttling.
+- HWiNFO briefly recorded up to 8 PCI Express error-counter events during this capture. No instability or performance loss was observed; monitor this counter in later testing rather than treating it as a fault from one isolated sample.
+- Current data strongly argues **against** disassembling or repasting the RTX 4070 Ti.
 
 ## Gaming stability test
 
