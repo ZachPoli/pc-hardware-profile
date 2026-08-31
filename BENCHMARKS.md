@@ -2,6 +2,22 @@
 
 Thermal/benchmark testing began after the August 2026 cleaning and AX210 wireless upgrade.
 
+## Session checkpoint — 2026-08-30
+
+Completed:
+- Post-cleaning HWiNFO idle/light-use baseline.
+- Cinebench 2026 CPU multi-core test.
+- Cinebench 2026 GPU test.
+- CPU and GPU both matched Cinebench's displayed identical-hardware reference scores.
+- No CPU thermal throttling observed.
+- CPU/AIO and GPU cooling results do not justify repasting or disassembly at this time.
+
+Deferred to next session:
+- CrystalDiskMark testing of the MSI M371 1TB NVMe and Samsung 860 QVO 2TB.
+- HWiNFO monitoring of MSI M371 temperature sensor 2 during storage load.
+- Investigation of occasional very slow archive extraction; compare 7-Zip with Windows Explorer if needed.
+- Optional real-game thermal/stability benchmark after storage testing.
+
 ## Baseline system conditions
 
 - Date: 2026-08-30
@@ -138,5 +154,5 @@ Duration:
 
 | Drive | Benchmark | Read | Write | Notes |
 |---|---|---:|---:|---|
-| MSI M371 1TB | | | | Watch temperature sensor 2; idle/light-use max observed 69 C |
-| Samsung 860 QVO 2TB | | | | |
+| MSI M371 1TB | Pending CrystalDiskMark | | | Watch temperature sensor 2; idle/light-use max observed 69 C |
+| Samsung 860 QVO 2TB | Pending CrystalDiskMark | | | Baseline temperature was excellent |
