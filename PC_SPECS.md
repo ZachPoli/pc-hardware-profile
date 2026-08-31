@@ -1,6 +1,6 @@
 # PC Specifications
 
-_Last updated: 2026-08-22_
+_Last updated: 2026-08-30_
 
 ## Core hardware
 
@@ -30,27 +30,21 @@ External SSDs are available, but model/capacity details have not yet been record
 
 ## Networking / Bluetooth
 
-### Current
-- Intel Dual Band Wireless-AC 3168
-- Bluetooth on this adapter is unstable on the desktop:
-  - severe intermittent controller input lag
-  - temporary unresponsiveness
-  - repeated disconnect/reconnect behavior
-- The same Xbox controller works normally over Bluetooth on a laptop.
-- Troubleshooting already performed:
-  - antennas verified connected
-  - Bluetooth power-saving disabled
-  - Xbox controller firmware updated
-  - Intel Bluetooth driver clean reinstall
-  - PC full power reset
-  - Wi-Fi-side disable test
-- Result: problem persists, making the desktop wireless module / antenna path the leading suspect.
-- The existing motherboard Wi-Fi module is housed in an awkward rear-I/O assembly, so replacing the bare M.2 module would likely require more disassembly than desired.
+### Active wireless hardware
+- Wavlink PCIe Wi-Fi 6E / Bluetooth adapter using an Intel AX210.
+- Windows identifies Wi-Fi as `Intel(R) Wi-Fi 6E AX210 160MHz`.
+- Bluetooth hardware ID verified as `USB\\VID_8087&PID_0032`, confirming the AX210 Bluetooth radio.
+- Bluetooth cable is connected from the Wavlink card to the motherboard `USB_5_6` internal USB 2.0 header.
+- External antennas are connected to the Wavlink adapter.
 
-### Planned
-- Bypass the existing AC 3168 by installing an Intel AX210-based PCIe Wi-Fi 6E / Bluetooth 5.3 adapter.
-- Preferred current option: Cudy WE3000S 2.0 (Intel AX210), using an open PCIe slot plus a motherboard USB 9-pin header for Bluetooth.
-- Disable the old AC 3168 Wi-Fi/Bluetooth devices in Windows after the new adapter is verified.
+### Bluetooth repair result
+The previous Intel Dual Band Wireless-AC 3168 path produced severe intermittent controller input lag, temporary unresponsiveness, and repeated disconnect/reconnect behavior. The same Xbox controller worked normally on another computer, and extensive software/driver troubleshooting did not resolve the desktop problem.
+
+The AC 3168 was bypassed with the Wavlink AX210 PCIe adapter. After driver installation, the old AC 3168 network adapter was disabled and the Xbox controller was paired through the AX210. **Bluetooth is now working normally with no observed lag or disconnect problem in the verification test.**
+
+### Legacy hardware
+- Intel Dual Band Wireless-AC 3168 remains physically installed in the motherboard's awkward rear-I/O / vertical M.2 assembly.
+- It is no longer used for normal wireless operation and can remain physically installed unless the motherboard is removed for another reason.
 
 ## RAM details reported by Windows
 
@@ -62,12 +56,11 @@ Both installed DIMMs report:
 
 Total installed RAM: **32 GB**
 
-## Upgrade priorities
+## Upgrade / maintenance priorities
 
-1. Install an Intel AX210-based PCIe Wi-Fi/Bluetooth adapter to bypass the unstable AC 3168 path.
-2. Clean dust from case, radiator, fans, GPU heatsink, and filters.
-3. Run thermal/benchmark baseline after cleaning.
-4. Evaluate CPU thermal paste only if temperatures warrant it.
-5. Evaluate GPU repaste only if core/hotspot behavior indicates a real thermal problem.
-6. Consider RAM upgrade only if actual memory pressure exceeds 32 GB.
-7. Record PSU model/wattage, monitor resolution/refresh rate, external SSD details, and exact AIO model.
+1. Run post-cleaning thermal and benchmark baseline.
+2. Evaluate CPU thermal paste only if temperatures warrant it.
+3. Evaluate GPU repaste only if core/hotspot behavior indicates a real thermal problem.
+4. Consider RAM upgrade only if actual memory pressure exceeds 32 GB.
+5. Record PSU model/wattage, monitor resolution/refresh rate, external SSD details, and exact AIO model.
+6. Consider BIOS update after baseline testing / before any future memory tuning or major hardware change.
